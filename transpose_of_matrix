@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class Solution {
+    public int[][] transpose(int[][] original) {
+        int[][] transpose = new int[original[0].length][original.length];
+        for(int i = 0; i < original.length; i++) {
+            for(int j = 0; j < original[0].length; j++) {
+                transpose[j][i] = original[i][j];
+            }
+        }
+        return transpose;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[][] original = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] transposed = solution.transpose(original);
+
+        System.out.println("Original Matrix:");
+        printMatrix(original);
+
+      
+        System.out.println("Transposed Matrix:");
+        printMatrix(transposed);
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
