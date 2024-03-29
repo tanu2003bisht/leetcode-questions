@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Solution {
+    public String sortSentence(String s) {
+        String[] words = s.split(" ");
+        Arrays.sort(words, (a, b) -> a.charAt(a.length() - 1) - b.charAt(b.length() - 1));
+        StringBuilder sortedSentence = new StringBuilder();
+        for (String word : words) {
+            sortedSentence.append(word.substring(0, word.length() - 1)).append(" ");
+        }
+        return sortedSentence.toString().trim();
+    }
+
+    public static void main(String args[]) {
+        Solution solution = new Solution();
+        String s = "This is a sample sentence";
+        String sortedSentence = solution.sortSentence(s);
+        System.out.println("The sorted sentence is : " + sortedSentence);
+    }
+}
