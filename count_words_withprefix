@@ -1,0 +1,22 @@
+class Solution {
+    public static int prefixCount(String[] words, String pref) {
+        int count = 0;
+        for (String word : words) {
+            if (word.startsWith(pref)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+       
+        String[] words1 = {"pay", "attention", "practice", "attend"};
+        String pref1 = "at";
+        String[] words2 = {"leetcode", "win", "loops", "success"};
+        String pref2 = "code";
+
+        System.out.println("Number of strings containing prefix \"" + pref1 + "\": " + prefixCount(words1, pref1));
+        System.out.println("Number of strings containing prefix \"" + pref2 + "\": " + prefixCount(words2, pref2));
+    }
+}
