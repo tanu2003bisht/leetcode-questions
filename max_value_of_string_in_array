@@ -1,0 +1,30 @@
+class Solution {
+    public static int maximumValue(String[] strs) {
+        int max = 0;
+        for (String str : strs) {
+            int value = getValue(str);
+            max = Math.max(max, value);
+        }
+        return max;
+    }
+
+    public static int getValue(String str) {
+        boolean isDigit = true;
+        for (char c : str.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                isDigit = false;
+                break;
+            }
+        }
+        return isDigit ? Integer.parseInt(str) : str.length();
+    }
+
+    public static void main(String[] args) {
+      
+        String[] strs1 = {"alic3", "bob", "3", "4", "00000"};
+        String[] strs2 = {"1", "01", "001", "0001"};
+
+        System.out.println("Maximum value of strs1: " + maximumValue(strs1));
+        System.out.println("Maximum value of strs2: " + maximumValue(strs2));
+    }
+}
