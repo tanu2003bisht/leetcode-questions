@@ -1,0 +1,17 @@
+
+class Solution {
+    public int repeatedNTimes(int[] nums) {
+        int[] count = new int[10001]; 
+        
+        for (int num : nums) {
+            count[num]++;
+        
+            if (count[num] == nums.length / 2) {
+                return num;
+            }
+        }
+
+    
+        return -1; 
+    }
+}
