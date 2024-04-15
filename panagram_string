@@ -1,0 +1,34 @@
+
+public class Solution {
+    public boolean checkIfPangram(String sentence) {
+        if (sentence.length() < 26) {
+            return false;
+        }
+        
+        boolean[] seen = new boolean[26];
+        int count = 0;
+        
+        for (char c : sentence.toCharArray()) {
+            int index = c - 'a';
+            if (!seen[index]) {
+                seen[index] = true;
+                count++;
+                if (count == 26) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        
+        String sentence1 = "thequickbrownfoxjumpsoverthelazydog";
+        System.out.println(solution.checkIfPangram(sentence1)); 
+        
+        String sentence2 = "leetcode";
+        System.out.println(solution.checkIfPangram(sentence2)); 
+    }
+}
