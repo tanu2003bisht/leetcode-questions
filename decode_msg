@@ -1,0 +1,40 @@
+
+public class Solution{
+    public static String decodeMessage(String key, String message) {
+        
+        char[] substitutionTable = new char[26];
+        Arrays.fill(substitutionTable, ' '); 
+        
+        
+        int index = 0;
+        for (char ch : key.toCharArray()) {
+            if (ch != ' ' && substitutionTable[ch - 'a'] == ' ') {
+                substitutionTable[ch - 'a'] = (char) ('a' + index);
+                index++;
+            }
+        }
+
+       
+        StringBuilder decodedMessage = new StringBuilder();
+        for (char ch : message.toCharArray()) {
+            if (ch == ' ') {
+                decodedMessage.append(' ');
+            } else {
+                decodedMessage.append(substitutionTable[ch - 'a']);
+            }
+        }
+
+        return decodedMessage.toString();
+    }
+
+    public static void main(String[] args) {
+       
+        String key1 = "the quick brown fox jumps over the lazy dog";
+        String message1 = "vkbs bs t suepuv";
+        System.out.println(decodeMessage(key1, message1)); 
+
+        String key2 = "eljuxhpwnyrdgtqkviszcfmabo";
+        String message2 = "zwx hnfx lqantp mnoeius ycgk vcnjrdb";
+        System.out.println(decodeMessage(key2, message2)); 
+    }
+}
