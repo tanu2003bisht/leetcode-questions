@@ -1,0 +1,37 @@
+
+public class Solution {
+    public int balancedStringSplit(String s) {
+        int balance = 0;
+        int count = 0;
+
+        for (char c : s.toCharArray()) {
+            if (c == 'L') {
+                balance++;
+            } else {
+                balance--;
+            }
+
+            if (balance == 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        
+        String s1 = "RLRRLLRLRL";
+        System.out.println("Output for Example 1: " + solution.balancedStringSplit(s1)); 
+
+        
+        String s2 = "RLRRRLLRLL";
+        System.out.println("Output for Example 2: " + solution.balancedStringSplit(s2)); 
+
+        
+        String s3 = "LLLLRRRR";
+        System.out.println("Output for Example 3: " + solution.balancedStringSplit(s3)); 
+    }
+}
