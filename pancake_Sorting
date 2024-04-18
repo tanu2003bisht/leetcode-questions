@@ -1,0 +1,50 @@
+ 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution {
+    public List<Integer> pancakeSort(int[] arr) {
+        List<Integer> flips = new ArrayList<>();
+        int n = arr.length;
+        for (int target = n; target > 0; target--) {
+            int index = findIndex(arr, target);
+            if (index == target - 1) continue;
+            if (index != 0) {
+                flip(arr, index + 1);
+                flips.add(index + 1);
+            }
+            flip(arr, target);
+            flips.add(target);
+        }
+        return flips;
+    }
+
+    private int findIndex(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) return i;
+        }
+        return -1;
+    }
+
+    private void flip(int[] arr, int k) {
+        int i = 0;
+        while (i < k / 2) {
+            int temp = arr[i];
+            arr[i] = arr[k - i - 1];
+            arr[k - i - 1] = temp;
+            i++;
+        }
+    }
+
+    public static void main(String[] args) {
+       Solution pancakeSort = new Solution();
+
+        
+        int[] arr1 = {3, 2, 4, 1};
+        System.out.println(pancakeSort.pancakeSort(arr1));
+
+       
+        int[] arr2 = {1, 2, 3};
+        System.out.println(pancakeSort.pancakeSort(arr2));
+    }
+}
