@@ -1,0 +1,43 @@
+public class Solution {
+    public static String longestNiceSubstring(String s) {
+        String longestNiceSubstring = "";
+        
+        for (int i = 0; i < s.length(); i++) {
+            boolean[] upperCasePresent = new boolean[26];
+            boolean[] lowerCasePresent = new boolean[26];
+            
+            for (int j = i; j < s.length(); j++) {
+                char c = s.charAt(j);
+                int index;
+                if (Character.isLowerCase(c)) {
+                    index = c - 'a';
+                    lowerCasePresent[index] = true;
+                } else {
+                    index = c - 'A';
+                    upperCasePresent[index] = true;
+                }
+
+                boolean nice = true;
+                for (int k = 0; k < 26; k++) {
+                    if (upperCasePresent[k] != lowerCasePresent[k]) {
+                        nice = false;
+                        break;
+                    }
+                }
+
+                if (nice && j - i + 1 > longestNiceSubstring.length()) {
+                    longestNiceSubstring = s.substring(i, j + 1);
+                }
+            }
+        }
+        
+        return longestNiceSubstring;
+    }
+
+    public static void main(String[] args) {
+        
+        System.out.println(longestNiceSubstring("YazaAay"));
+        System.out.println(longestNiceSubstring("Bb")); 
+        System.out.println(longestNiceSubstring("c"));
+    }
+}
