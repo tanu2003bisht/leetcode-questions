@@ -1,0 +1,44 @@
+
+import java.util.*;
+
+public class Solution {
+    public static String reverseVowels(String s) {
+        char[] vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
+        char[] sChars = s.toCharArray();
+        List<Character> vowelsList = new ArrayList<>();
+        
+        
+        for (int i = 0; i < sChars.length; i++) {
+            char c = sChars[i];
+            for (char v : vowels) {
+                if (c == v) {
+                    vowelsList.add(c);
+                    sChars[i] = '#';
+                    break;
+                }
+            }
+        }
+        
+       
+        Collections.reverse(vowelsList);
+        
+      
+        int index = 0;
+        for (int i = 0; i < sChars.length; i++) {
+            if (sChars[i] == '#') {
+                sChars[i] = vowelsList.get(index++);
+            }
+        }
+        
+        
+        return new String(sChars);
+    }
+
+    public static void main(String[] args) {
+        String s1 = "hello";
+        System.out.println(reverseVowels(s1)); 
+
+        String s2 = "leetcode";
+        System.out.println(reverseVowels(s2)); 
+    }
+}
