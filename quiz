@@ -1,0 +1,73 @@
+1.What is an Algorithm?
+
+a.A set of instructions that, when executed, completes a defined task that solves a problem.
+b..The process of breaking apart a problem.
+c.The process of removing unnecessary detail.
+d.A sequence of instructions.
+
+ans-a.
+
+2. Multiple Choice
+How do we represent the complexity of an algorithm?
+a.Big-R
+b.Big-O
+c.Big-N
+d.Big-A
+
+ans-b.
+
+3. Multiple Choice
+What is meant by the time complexity of an algorithm?
+a.The amount of time required to solve a particular problem
+b.How difficult a problem is to solve
+c.How many lines of code are required to solve a problem
+d.How quickly a solution can be developed
+
+ans-a.(Rate of time increases wrt input size)
+
+4. Multiple Choice
+What two pieces of information allow you to analyse an algorithm?
+a.Time Complexity
+b.Space Complexity
+c.Size Complexity
+d.Complex Complexity
+e.Simplicity Complex
+
+ans-a and b.
+
+5. Multiple Choice
+What does the big-O notation show?
+a.The effectiveness of an algorithm
+b.The amount of time required to solve a particular problem
+c.How difficult a problem is to solve
+d.How many lines of code are required to solve a problem
+e.How quickly a solution can be developed
+
+ans- a.
+
+6. Multiple Choice
+What does a constant time complexity mean?
+a.The amount of time taken to complete an algorithm is independent to the number of inputted elements
+b.The amount of time taken to complete an algorithm is independent from the number of elements inputted.
+c.The amount of time taken to complete an algorithm is proportional to the number of items inputted to the power of n
+d.The amount of time taken to complete an algorithm is proportional to 2 to the power of the number of items inputted.
+e.The time taken to complete an algorithm will increase at a smaller rate as the number of elements inputted.
+
+ans-a. 
+
+7. Multiple Choice
+How do you reduce the space complexity?
+a.Try to complete all of the operations on the same data set
+b.You reduce the amount of embedded for loops, and then reduce the amount of items you complete the operations on i.e. divide and conquer
+
+ans-a.
+
+8. Multiple Choice
+How do you reduce the time complexity of an algorithm?
+a.You reduce the amount of embedded for loops, and then reduce the amount of items you complete the operations.
+b.Try to complete all of the operations on the same data set
+
+ans- a.
+
+
+
