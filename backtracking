@@ -1,0 +1,51 @@
+// print n to 1
+import java.util.Scanner;
+class Main{
+    void f(int i,int n){
+        if(i>n){
+            return;
+        }
+
+        f(i+1,n);
+        System.out.println(i);
+    }
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        Main m1= new Main();
+        m1.f(1,n);
+    }
+}
+
+//output
+4
+3
+2
+1
+
+
+//print 1 to n
+import java.util.Scanner;
+class Main{
+    void f(int i,int n){
+        if(i<1){
+            return;
+        }
+
+        f(i-1,n);
+        System.out.println(i);
+    }
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        Main m1= new Main();
+        m1.f(n,n);
+    }
+}
+
+
+//output
+1
+2
+3
+4
