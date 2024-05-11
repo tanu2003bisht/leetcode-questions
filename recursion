@@ -1,0 +1,36 @@
+//print n to 1 using recursion
+import java.util.Scanner;
+class Main{
+    void f(int i,int n){
+        if(i<1){
+            return;
+        }
+        System.out.println(i);
+        f(i-1,n);
+    }
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        Main m1= new Main();
+        m1.f(4,n);
+    }
+}
+
+
+//print 1 to n
+import java.util.Scanner;
+class Main{
+    void f(int i,int n){
+        if(i>n){
+            return;
+        }
+        System.out.println(i);
+        f(i+1,n);
+    }
+    public static void main(String[] args){
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        Main m1= new Main();
+        m1.f(1,n);
+    }
+}
